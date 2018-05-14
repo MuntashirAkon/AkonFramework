@@ -1,0 +1,21 @@
+#!/usr/bin/php
+<?php
+
+define("EXIT_SUCCESS", 0);
+define("EXIT_FAILURE", 1);
+
+$server_cmd = "php -S 127.0.0.1:8080 router.php";
+
+// Run server
+//exec($server_cmd);
+
+// Enable directory writing for /Projects (Linux Only)
+if(exec('uname -s') == 'Darwin') {
+    //$user = ;
+    exec("ps aux", $output);
+    $output = preg_grep("/$server_cmd$/", $output);
+    if(count($output) == 1){
+        preg_match("/^([A-Za-z0-9\s\:_\.]+)/", $output[0], $matches);
+        print_r($output);
+    }
+}

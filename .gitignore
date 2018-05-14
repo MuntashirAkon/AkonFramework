@@ -1,0 +1,3 @@
+# Remove project files
+.idea/
+.DS_Store
